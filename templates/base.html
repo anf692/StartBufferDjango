@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Starbuffet</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="navbar">
+
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="logo">
+        </div>
+
+        <ul class="menu">
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Restaurants</a></li>
+            <li><a href="#">Cours de cuisine</a></li>
+            <li><a href="#">Traiteurs</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="connecter">
+            <a href="#" class="btn login">Connexion</a>
+            <a href="#" class="btn signup">Inscription</a>
+        </div>
+
+    </div>
+</header>
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+ <footer class="footer-f">
+        <div class="footer">
+
+            <div class="services_footer">
+                <p>Services</p><br>
+                <ul>
+                    <li>Traiteurs</li>
+                    <li>Restaurants</li>
+                    <li>Cours de Cuisine</li>
+                </ul>
+            </div>
+            <div class="pro_space">
+                <p>Espace Pro</p><br>
+                <ul>
+                    <li>Devenez partenaire</li>
+                    <li>Connexion</li>
+                    <li>FAQ Professionels</li>
+                </ul>
+            </div>
+            <div class="contact">
+                <p>Contact</p><br>
+                <ul>
+                    <li>StarBuffet</li>
+                    <li>Dakar Senegal</li>
+                    <li>Tel: +221 77 000 00 00</li>
+                    <li>Email : contact@starbuff.com</li>
+                    <li><i class="fa-brands fa-facebook"></i> <i class="fa-brands fa-solid fa-instagram"></i></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy;2025 StarBuffet. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>

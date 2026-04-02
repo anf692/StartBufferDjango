@@ -1,125 +1,213 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-     background-color: #fff3e0;
-}
-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-   background-color: white;
-   
-  
-}
-.logo img{
-     width: 20%;
-     margin-left: 100px;
-     
-}
-nav ul{
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    width: 20%; 
-    margin-right: -170px;
-   
-}
-.navig ul li{
-    padding: 20px 25px;
-      justify-content: space-between;
-       
-}
-.navig ul li a{
-    text-decoration: none;
-    font-size: 14px;
-    align-items: center;
-    color: #999;
-    gap: 20px;
-    justify-content: center;
-   
-    
-}
-.navig ul li a.active{
-    background-color: #e65100;
-    transform: none;
-    text-underline-offset: 10px;
-    transition: 0.5s;
-  color: white;
-   padding: 10px;
-   border-radius: 10px;
-}
-.navig ul li a:hover{
-    padding: 10px;
-    background-color: #e65100;
-   color: white;
-   border-radius: 10px;
-     transform: rotate(10deg);
-    text-underline-offset: 10px;
-    transition: 0.5s;
-   
-}
-.connecter{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-right: 90px;
-}
-.btn1{
-    box-shadow: 5px 5px 30px rgba(0,0,0,0.1);
-    font-size: 14px;
-    border-radius: 10px;
-    color: #999;
-    padding: 10px;
-    cursor: pointer;
-    margin-right: 20px;
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.btn2{
-    box-shadow: 5px 5px 30px rgba(0,0,0,0.1);
-    font-size: 14px;
-    border-radius: 10px;
-    color: white;
-   
+/* BODY */
+body {
+  background-color: #fff3e0;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: white;
+}
+
+/* LOGO */
+.logo img {
+  width: 90px; /* corrigé */
+  height: 40px;
+  margin-left: 60px;
+}
+
+/* MENU */
+.navig ul {
+  display: flex;
+  list-style: none;
+  gap: 20px; /* mieux que margin */
+}
+
+.navig ul li a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #555;
+  transition: 0.3s;
+}
+
+/* ACTIVE */
+.navig ul li a.active {
+  background-color: #e65100;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+/* HOVER */
+.navig ul li a:hover {
+  background-color: #e65100;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transform: none; /* enlever rotation bizarre */
+}
+
+/* BOUTONS */
+.connecter {
+  display: flex;
+  gap: 10px;
+  margin-left: 100px;
+}
+
+/* BTN1 */
+.btn1 {
+  padding: 8px 12px;
+  border-radius: 6px;
+  background-color: #f1f1f1;
+  color: #333;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn1:hover {
+  background-color: #ddd;
+}
+
+/* BTN2 */
+.btn2 {
+  padding: 8px 12px;
+  border-radius: 6px;
+  background-color: #e65100;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn2:hover {
+  background-color: #c84300;
+}
+.authentification{
+    margin-top: 10%;
+     margin-left: 448px;
+        box-shadow: 5px 5px 30px rgba(0,0,0,0.1);
+      background-color: white;
+   width: 400px;
+     height: 330px;
+    padding: 40px;
+     border-radius: 10px;
+     margin-bottom: 140px;
+    
+}
+.authentification h3{
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: -20px;
+}
+.labe label{
+    font-size: 12px;
+}
+.labe input{
+    width: 100%;
     padding: 10px;
-    background-color: #e65100;
+    border-radius: 8px;
+  border: 0.2px solid #ddd8d8;
+  
+}
+.chex{
+    display: flex;
+  gap: 10px;
+    margin-top: 20px;
+   
+}
+.chex label{
+    font-size: 10px;
+}
+.chex p{
+     font-size: 10px;
+     margin-left: 90px;
+     color: #e65100;
+}
+.compte{
+    margin-top: 20px;
+    font-size: 11px;
+    color: #e65100;
+}
+.seconex{
+    margin-top: 20px;
+    text-align: center;
+    
+   
+}
+.seconex a{
+    text-decoration: none;
+    color: white;
     cursor: pointer;
 }
-.btn2 h4:hover{
+.seconex a:hover{
     transition: 0.5s;
 }
-.image img{
+.seconex button{
+ padding: 9px;
+ width: 100%;
+ background-color: #e65100;
+ color: white;
+ border-radius: 8px;
+ border: none;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navig ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .connecter {
+    flex-direction: column;
+  }
+}
+.image {
   width: 100%;
-    height: 400px;
-    /* background: url("image/banner-caterers.jpg") center/cover no-repeat; */
-    background-blend-mode: multiply;
-    background-color: #91654e;
-    display: flex;
-    justify-content: center;
+  height: 400px;
+  background: url("image/banner-caterers.jpg") center/cover no-repeat;
+  background-blend-mode: multiply;
+  background-color: #91654e;
+  display: flex;
+  justify-content: center;
 }
-.traiteur{
-    position: absolute;
-    padding-top: 150px;
-   
-    color: white;
-    align-items: center;
-    margin-left: 300px;
+.traiteur {
+  position: absolute;
+  padding-top: 150px;
+
+  color: white;
+  align-items: center;
+  margin-left: 300px;
 }
-.traiteur h1{
-    font-weight: bold;
-    font-size: 50px;
+.traiteur h1 {
+  font-weight: bold;
+  font-size: 50px;
 }
-.input-text{
-    display: flex;
-    justify-content: space-around;
-    background-color: #fff3e0;
-    padding-bottom: 20px;
-    padding-top: 30px;
-    align-items: center;
-} 
+.input-text {
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff3e0;
+  padding-bottom: 20px;
+  padding-top: 30px;
+  align-items: center;
+}
 
 /* }
 @media screen and (max-width: 768px) {
@@ -203,525 +291,515 @@ margin-top: 20px;
      gap: 10px;
      /* margin-left: 0px; */
 
-
-.input .stat select{
-    width: 100%;
-    padding: 9px;
-     background-color: white;
-     border: 1px solid #999;
-     border-radius: 10px;
-     gap: 10px;
+.input .stat select {
+  width: 100%;
+  padding: 9px;
+  background-color: white;
+  border: 1px solid #999;
+  border-radius: 10px;
+  gap: 10px;
 }
-.input .stat1 select{
-    width: 100%;
-    padding: 9px;
-     background-color: white;
-     border: 1px solid #999;
-     border-radius: 10px;
-     gap: 10px;
+.input .stat1 select {
+  width: 100%;
+  padding: 9px;
+  background-color: white;
+  border: 1px solid #999;
+  border-radius: 10px;
+  gap: 10px;
 }
-.btn{
-    display: flex;
-justify-content: space-around; 
-gap: 10px;
-margin-right: 100px;
-margin-left: -350px;
+.btn {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  margin-right: 100px;
+  margin-left: -350px;
 }
-.btn button{
-    padding: 9px;
-    background-color: white;
+.btn button {
+  padding: 9px;
+  background-color: white;
   border: none;
   border-radius: 10px;
 
-margin-top: 20px;
-
+  margin-top: 20px;
 }
-.btn .bttn{
-    background-color: #e65100;
-    color: white;
-     margin-left: 250px; 
-}
-
-.content{
-    display: grid;
-    grid-template-columns: 100%;
-    gap: 20px;
+.btn .bttn {
+  background-color: #e65100;
+  color: white;
+  margin-left: 250px;
 }
 
+.content {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 20px;
+}
 
 .parent {
-    /* display: grid;
+  /* display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr); */
-    display: flex;
- grid-template-rows: repeat(2, 1fr);
-   gap: 5px;
-    box-shadow: 5px 5px 30px rgba(0,0,0,0.1);
+  display: flex;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 5px;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
   background-color: white;
   height: 160px;
   width: 80%;
   border-radius: 10px;
   margin-left: 100px;
-
-
 }
-.content .parent .div1 .verifier{
-    position: relative;
-    padding: 10px;
-    background-color: greenyellow;
-    color: green;
-    font-size: 12px;
-    border-radius: 20px;
-    margin-top: 20px;
-    width: 50%;
-    
+.content .parent .div1 .verifier {
+  position: relative;
+  padding: 10px;
+  background-color: greenyellow;
+  color: green;
+  font-size: 12px;
+  border-radius: 20px;
+  margin-top: 20px;
+  width: 50%;
 }
-.verifier i{
-     margin-bottom: 200px;
+.verifier i {
+  margin-bottom: 200px;
 }
 
-.img{
-    width: 300px;
-    height: 100%;
-  
+.img {
+  width: 300px;
+  height: 100%;
 }
-.mere{
-    display: flex;
-    justify-content: space-between;
-    width: 99%;
-  
-
+.mere {
+  display: flex;
+  justify-content: space-between;
+  width: 99%;
 }
 
 .div4 {
-    grid-template-columns: 100%;
-    padding-top: 9px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    font-size: 14px;
-    margin-left: 20px;
+  grid-template-columns: 100%;
+  padding-top: 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  margin-left: 20px;
 }
-.div4 h4 i{
-    font-size: 14px;
-    color: #585757;
+.div4 h4 i {
+  font-size: 14px;
+  color: #585757;
 }
-.div4 p span{
-    font-weight: bold;
+.div4 p span {
+  font-weight: bold;
 }
 /* .div1 .img img{
     width: 300%;
     height: 100px;
 } */
+ .div6 {
+  grid-column-start: 4;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.div6 button {
+  width: 100px;
+  background-color: black;
+  color: white;
+  padding: 7px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  margin-left: 590px;
+  text-decoration: none;
+}
+.div6 button a {
+  text-decoration: none;
+  color: white;
+}
 .div5 {
-    grid-column-start: 4;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+  grid-column-start: 4;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
-.div5 button{
-    width: 100px;
-    background-color: black;
-    color: white;
-    padding: 7px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    margin-right: 10px;
-    text-decoration: none;
-    
+.div5 button {
+  width: 100px;
+  background-color: black;
+  color: white;
+  padding: 7px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  margin-left: 40px;
+  text-decoration: none;
 }
-.div5 button a{
-    text-decoration: none;
-    color: white;
+.div5 button a {
+  text-decoration: none;
+  color: white;
+  margin-left: 40px;
 }
-.bn{
-    margin-left: 10px;
+.bn {
+  margin-left: 10px;
 }
-.div5 i{
+.div5 i {
   color: #ffb300;
+  margin-left: -20px;
+  
 }
-.div5 p{
-    margin-left: 50px;
+.div5 p {
+  margin-left: -17px;
 }
-.content-text1{
-   box-shadow: 5px 5px 30px rgba(0,0,0,0.1);
+.content-text1 {
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
   background-color: white;
- gap: 30px;
- padding-top: 10px;
- margin-top: 10px;
- width: 900px;
- height: 200px;
- 
+  gap: 30px;
+  padding-top: 10px;
+  margin-top: 10px;
+  width: 900px;
+  height: 200px;
 }
-.content-text2{
+.content-text2 {
+}
+.content .content-text1 {
+}
 
-
- 
+.imagine {
+  margin-left: 100px;
+  height: 90%;
 }
-.content .content-text1{}
-
-.imagine{
-    margin-left: 100px;
-    height: 90%;
+.imagine img {
+  margin-left: -100px;
+  height: 100%;
 }
-.imagine img{
-    margin-left: -100px;
-    height: 100%;
+.contact1 {
+  margin-left: 230px;
+  margin-top: -150px;
+  justify-content: space-between;
+  display: grid;
 }
-.contact1{
-     margin-left: 230px;
-    margin-top: -150px;
-    justify-content: space-between;
-    display: grid;
-
-   
+.border {
+  position: relative;
+  margin-top: 30px;
 }
-.border{
-    position: relative;
-    margin-top: 30px;
+.contenair-img {
+  background-size: cover;
+  width: 100%;
+  height: 350px;
+  background-position: center;
+  background-image:
+    linear-gradient(rgba(223, 91, 20, 0.534), rgba(218, 94, 27, 0.596)),
+    url("image/banner-head-accueil.jpg");
 }
-.contenair-img img{
-    background-size: cover;
-    width: 100%;
-    height: 350px;
-    background-position: center;
-      /* background-image:
-    linear-gradient(
-      rgba(223, 91, 20, 0.534),
-      rgba(218, 94, 27, 0.596)
-    ),
-    url("image/banner-head-accueil.jpg"); */
-}
-.content-text{
-    position: absolute;
+.content-text {
+  position: absolute;
   top: 30%;
   margin-left: 350px;
   color: white;
   text-align: center;
 }
-.button{
+.button {
   position: absolute;
   bottom: 30%;
   margin-left: 550px;
   color: #e65100;
   text-align: center;
-   box-shadow: 5px 5px 30px rgba(0,0,0,0.1);
-   background-color: white;
-   padding: 15px;
-   border-radius: 8px;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
 }
-.button a{
-    text-decoration: none;
-     color: #e65100;
-}
-
-footer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    background-color: rgb(1, 1, 18);
-    color: #FFF;
-    gap: 10px;
-    padding: 40px 0;
-    margin-top: 25px;
+.button a {
+  text-decoration: none;
+  color: #e65100;
 }
 
-.footer{
-   
-    width: 100%;
-}
-.footer{
-    display: flex;
-    justify-content: space-around;
-    gap: 80px;
-    border-bottom: 1px solid #5e5c5c;
-} 
-
-.footer p{
-    font-weight: bold;
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(1, 1, 18);
+  color: #fff;
+  gap: 10px;
+  padding: 40px 0;
+  margin-top: 25px;
 }
 
-.footer ul li{
-    color: gray;
-    list-style: none;
+.footer {
+  width: 100%;
+}
+.footer {
+  display: flex;
+  justify-content: space-around;
+  gap: 80px;
+  border-bottom: 1px solid #5e5c5c;
 }
 
-.section{
-    background-color: #fff3e0;
-    height: 300%;
-    padding: 30px;
-    
+.footer p {
+  font-weight: bold;
 }
-.forms{
-    box-shadow: 5px 5px 30px rgba(0,0,0,0.1);
-    background-color: white;
-    margin-left: 154px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    width: 79%;
-    height: 1420px;
-    padding: 70px;
-   margin-right: 50px;
-    border-radius: 10px;
-}
-.min{
-     box-shadow: 5px 5px 30px rgba(0,0,0,0.1);
-     padding: 40px;
-     border-radius: 10px;
-      margin-left: 28px;
-      height: 270px;
-      width: 94%;
 
+.footer ul li {
+  color: gray;
+  list-style: none;
 }
-.min h2{
-   
+
+.section {
+  background-color: #fff3e0;
+  height: 500%;
+  padding: 30px;
 }
-.form-text{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
+.forms {
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  margin-left: 154px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 79%;
+  height: 1420px;
+  padding: 70px;
+  margin-right: 50px;
+  border-radius: 10px;
 }
-.form-text input{
-    padding: 8px;
-    width: 47%;
-    border-radius: 7px;
+.min {
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  border-radius: 10px;
+  margin-left: 28px;
+  height: 270px;
+  width: 94%;
 }
-.text{
-    display: flex;
-    justify-content: space-between;
-    color: black;
-    margin-top: 10px;
+.min h2 {
 }
-.text .email{
-    margin-right: 270px;
-   
+.form-text {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
 }
-.form-text .input{
-    background-color: rgba(173, 216, 230, 0.5);
-      padding-bottom: 19px
+.form-text input {
+  padding: 8px;
+  width: 47%;
+  border-radius: 7px;
 }
-.form-text1 .input1{
-    background-color: rgba(173, 216, 230, 0.5);
-    padding-bottom: 19px;
-    border-radius: 7px;
+.text {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  margin-top: 10px;
+}
+.text .email {
+  margin-right: 270px;
+}
+.form-text .input {
+  background-color: rgba(173, 216, 230, 0.5);
+  padding-bottom: 19px;
+}
+.form-text1 .input1 {
+  background-color: rgba(173, 216, 230, 0.5);
+  padding-bottom: 19px;
+  border-radius: 7px;
 }
 input::placeholder {
-    color: black;
-    font-size: 14px;
+  color: black;
+  font-size: 14px;
 }
 .input1::placeholder {
-   
-    color: black;
-    font-size: 29px;
-    font-weight: bold;
+  color: black;
+  font-size: 29px;
+  font-weight: bold;
 }
-.text1{
-     display: flex;
-    justify-content: space-between;
-    color: black;
+.text1 {
+  display: flex;
+  justify-content: space-between;
+  color: black;
 }
-.form-text1{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
+.form-text1 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
 }
-.form-text1 input{
-    padding: 8px;
-    width: 47%;
-    border-radius: 8px;
+.form-text1 input {
+  padding: 8px;
+  width: 47%;
+  border-radius: 8px;
 }
-.text1 .para{
-     margin-right: 120px;
+.text1 .para {
+  margin-right: 120px;
 }
-.box{
-   margin-top: 10px;
-      box-shadow: 5px 5px 30px rgba(0,0,0,0.1);
+.box {
+  margin-top: 10px;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
   background-color: white;
-    padding: 40px;
-     border-radius: 10px;
-       margin-left: 25px;
-      width: 94%;
-      height: 560px;
+  padding: 40px;
+  border-radius: 10px;
+  margin-left: 25px;
+  width: 94%;
+  height: 560px;
 }
-.form-select select{
-    padding: 16px;
-    width: 100%;
-    background-color: white;
-    border-radius: 7px;
+.form-select select {
+  padding: 16px;
+  width: 100%;
+  background-color: white;
+  border-radius: 7px;
 }
-.form-input input{
-      padding: 16px;
-    width: 100%;
-    border-radius: 7px;
+.form-input input {
+  padding: 16px;
+  width: 100%;
+  border-radius: 7px;
+  
 }
-.form-input textarea{
-       padding: 50px;
-    width: 100%;
-    border-radius: 8px
+.form-input textarea {
+  padding: 50px;
+  width: 90%;
+  border-radius: 8px;
 }
 /* .checkbox{
     display: grid;
     grid-template-columns: 100px;
 } */
 
-.case{
-    display: flex;
-    grid-template-columns: 100px 100px;
+.case {
+  display: flex;
+  grid-template-columns: 100px 100px;
 }
-.case .chexbox1{
-    margin-left: 300px;
+.case .chexbox1 {
+  margin-left: 300px;
 }
-.info{
-      margin-top: 10px;
-      box-shadow: 5px 5px 30px rgba(0,0,0,0.1);
+.info {
+  margin-top: 10px;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
   background-color: white;
-    padding: 40px;
-     border-radius: 10px;
-       margin-left: 25px;
-      width: 94%;
-      height: 200px;
+  padding: 40px;
+  border-radius: 10px;
+  margin-left: 25px;
+  width: 94%;
+  height: 200px;
 }
-.text3{
-     display: flex;
-    justify-content: space-between;
-    color: black;
+.text3 {
+  display: flex;
+  justify-content: space-between;
+  color: black;
 }
-.check input{
-       padding: 16px;
-    width: 47%;
-    border-radius: 7px;
+.check input {
+  padding: 16px;
+  width: 47%;
+  border-radius: 7px;
 }
-.check{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
+.check {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
 }
-.text3 .para1{
-    margin-right: 250px;
+.text3 .para1 {
+  margin-right: 250px;
 }
-.contacts{
-        margin-top: 10px;
-      box-shadow: 5px 5px 30px rgba(0,0,0,0.1);
+.contacts {
+  margin-top: 10px;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
   background-color: white;
-    padding: 40px;
-     border-radius: 10px;
-       margin-left: 25px;
-      width: 94%;
-      height: 200px
+  padding: 40px;
+  border-radius: 10px;
+  margin-left: 25px;
+  width: 94%;
+  height: 200px;
 }
-.contact input{
-       padding: 10px;
-    width: 50%;
-    border-radius: 8px;
-   
-    
-    
+.contact input {
+  padding: 10px;
+  width: 50%;
+  border-radius: 8px;
 }
-.bbb{
-    margin-left: 700px;
-    padding-top: 20px;
-    
+.bbb {
+  margin-left: 700px;
+  padding-top: 20px;
 }
-.bbb button{
-background-color: #e65100;
-padding: 10px;
-border-radius: 10px;
-color: white;
-width: 70%;
+.bbb button {
+  background-color: #e65100;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  width: 70%;
 }
-.file{
-    display: flex;
-    justify-content: space-between;
-   
+.file {
+  display: flex;
+  justify-content: space-between;
 }
-.file p{
-    margin-right: 50%;
-    margin-top: 10px;
+.file p {
+  margin-right: 50%;
+  margin-top: 10px;
 }
 .btn-file {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #fff3e0; 
-    color: rgb(153, 29, 29);
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fff3e0;
+  color: rgb(153, 29, 29);
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .btn-file:hover {
-    background-color: #fff3e0;
+  background-color: #fff3e0;
 }
 @media screen and (max-width: 768px) {
-
-nav ul,
-.btn1,
-.btn2 {
+  nav ul,
+  .btn1,
+  .btn2 {
     display: none;
-}
+  }
 
-.traiteur{
-   margin-left: 25px;
-   width: 90%;
-}
+  .traiteur {
+    margin-left: 25px;
+    width: 90%;
+  }
 
-.input-text{
+  .input-text {
     display: flex;
     flex-direction: column;
-  margin-left: 10px;
-}
-.input-text h2{
-     margin-right: 250px;
-}
+    margin-left: 10px;
+  }
+  .input-text h2 {
+    margin-right: 250px;
+  }
 
-.input,
-.input .stat select,
-.input .stat1 select{
+  .input,
+  .input .stat select,
+  .input .stat1 select {
     width: 100%;
-}
+  }
 
-.input select{
+  .input select {
     width: 100%;
     padding: 9px;
     border-radius: 10px;
     margin-bottom: 10px;
-}
+  }
 
-.parent .div1{
+  .parent .div1 {
     display: flex;
     flex-direction: column;
+  }
 
-}
-
-.btn{
+  .btn {
     display: flex;
     justify-content: center;
     gap: 10px;
+  }
 
-    
-}
-
-.btn button{
+  .btn button {
     padding: 9px;
     border-radius: 10px;
-}
+  }
 
-.btn .bttn{
+  .btn .bttn {
     background-color: #e65100;
     color: white;
-
-}
-.content .parent .mere .div4 .div5{
-     display: flex;
+  }
+  .content .parent .mere .div4 .div5 {
+    display: flex;
     flex-direction: column;
     gap: 20px;
-}
- .footer {
+  }
+  .footer {
     flex-direction: column;
     margin-left: 50px;
   }
 
-   .content-text h1 {
+  .content-text h1 {
     position: absolute;
     top: 50%;
     margin-top: -20px;
@@ -741,9 +819,9 @@ nav ul,
 
     color: white;
     font-size: 12px;
-  } 
+  }
 
-    .button a {
+  .button a {
     position: absolute;
     bottom: 25%;
     margin-bottom: -20px;
@@ -755,84 +833,82 @@ nav ul,
     padding: 15px;
     border-radius: 8px;
   }
-.img{
+  .img {
     width: 100%;
-}
+  }
 
-.parent {
+  .parent {
     /* flex-direction: column;  */
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     width: 70%;
-   
+
     margin-bottom: 70%;
     margin-left: 15%;
-}
-.burger span{
-  display: block;
-  width: 35px;
-  height: 5px;
-  background-color: black;
-  margin: 6px 0;
-  margin-right: 15px;
-}
-.mere{
+  }
+  .burger span {
+    display: block;
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+    margin-right: 15px;
+  }
+  .mere {
     padding-right: -30%;
-       box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
     background-color: white;
- height: 190px;
+    height: 190px;
+  }
 }
-
-
-}
-@media screen and (max-width: 768px){
- .forms{
+@media screen and (max-width: 768px) {
+  .forms {
     width: 350px;
- margin-left: -8px;
- }
- .min{
+    margin-left: -8px;
+  }
+  .min {
     width: 280px;
-  margin-left: -30px;
-  padding: 19px;
- }
- .form-text{
-       padding: 8px;
-  width: 100%;
-  height: 23%;
+    margin-left: -30px;
+    padding: 19px;
+  }
+  .form-text {
+    padding: 8px;
+    width: 100%;
+    height: 23%;
     border-radius: 7px;
- }
-  .form-text1{
-       padding: 8px;
-  width: 100%;
-  height: 23%;
+  }
+  .form-text1 {
+    padding: 8px;
+    width: 100%;
+    height: 23%;
     border-radius: 7px;
- }
- .text{
+  }
+  .text {
     font-size: 12px;
     display: flex;
     justify-content: space-between;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
- }
- .text p{
-margin-left: 16px;
- }
- .text .email{
-margin-left: 80px;
- }
- .text1{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .text p {
+    margin-left: 16px;
+  }
+  .text .email {
+    margin-left: 80px;
+  }
+  .text1 {
     font-size: 10px;
-       display: flex;
+    display: flex;
     justify-content: space-between;
     white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
- }
-  .text1 p{
-margin-left: 16px;
- }
- .text1 .para{
-margin-left: 50px;
- }
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .text1 p {
+    margin-left: 16px;
+  }
+  .text1 .para {
+    margin-left: 50px;
+  }
 }

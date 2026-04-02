@@ -1,131 +1,153 @@
 {% load static %}
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" >
-      <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    
-         <header>
-            
-           <div class="logo">
-    <img src="{% static 'images/logo.png' %}">
-        </div>
-    <nav>
-     <div class="navig">
-        <ul>
-            
-            <li><a href="index.html">Accueil</a></li>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="{% static 'images/logo.png' %}" />
+      </div>
+      <nav>
+        <div class="navig">
+          <ul>
+            <li><a href="{% url "services:accueil"%}">Accueil</a></li>
             <li><a href="#">Restaurants</a></li>
-            <li><a href="#">Coursdecuisine</a></li>
-            <li><a href="#"  class="active">Traiteurs</a></li>
+            <li><a href="#">Cours de cuisine</a></li>
+            <li><a href="#" class="active">Traiteurs</a></li>
             <li><a href="responsive-contact.html">Contacts</a></li>
-        </ul>
+          </ul>
         </div>
-    </nav>
+      </nav>
 
+      <div class="connecter">
+            {% if user.is_authenticated %}
 
-   <div class="connecter">
-   <a href="authentification.html"><h4 class="btn1">Connexion</h4></a>
-   <h4 class="btn2">Inscription</h4>
-</div>
+                <form method="post" action="{% url "logout" %}">
+                    {% csrf_token %} <!--- pour gerer les attaque-->
+                    <button type="submit" class="btn1"> Deconnexion</button>
+                </form>
+            {% else %}
+                <a href="{% url "login" %}" class="btn2">Connexion</a>
+            {% endif %}      </div>
 
-<div class="burger">
-       <span></span>
-       <span></span>
-       <span></span>
-</div>
+      <div class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
 
-</header>
-
-<section>
-    <div class="traiteur">
+    <section>
+      <div class="traiteur">
         <h1>Nos traiteurs</h1>
-        <p>Decouvrez nos traiteurs Professionels pour vos evenements, mariages, bapteme et <br> reception</p>
-    </div>
-    <div class="image">
-        <img src="{% static 'images/banner-caterers.jpg' %}" alt="Banner">
-    </div>
-</section>
+        <p>
+          Decouvrez nos traiteurs Professionels pour vos evenements, mariages,
+          bapteme et <br />
+          reception
+        </p>
+      </div>
+      <div class="image">
+        <img src="{% static 'images/banner-caterers.jpg' %}" alt="Banner"  style="object-fit: cover; width: 100%;"/>
+      </div>
+    </section>
 
-<section>
-    <div class="input-text">
-    <div class="filtre">
-     <h2>Filtres</h2>
-    </div>
+    <section>
+      <div class="input-text">
+        <div class="filtre">
+          <h2>Filtres</h2>
+        </div>
 
-    <div class="input">
-     <label for="specialite">Specialite</label><br>
-     <div  class="stat1">
-     <select name="specialite" id="specialite">
-        <option value="">Toutes les specialites</option>
-     </select>
-     </div>
-    </div>
-    <div class="input">
-        <div class="stat">
-     <label for="statut">Statut</label><br>
-     <select  name="statut" id="statut">
-        <option value="">Tous les traiteurs</option>
-     </select>
-    </div>
-    </div>
-    <div class="btn">
-    <button class="bttn">
-    <i class="fa-solid fa-filter"></i>
- 
-    Filtre</button>
-    <button>
-    <i class="fa-solid fa-arrows-rotate"></i>
-    
-    Reinitialiser</button>
-    </div>
-    </div>
-</section>
+        <div class="input">
+          <label for="specialite">Specialite</label><br />
+          <div class="stat1">
+            <select name="specialite" id="specialite">
+              <option value="">Toutes les specialites</option>
+            </select>
+          </div>
+        </div>
+        <div class="input">
+          <div class="stat">
+            <label for="statut">Statut</label><br />
+            <select name="statut" id="statut">
+              <option value="">Tous les traiteurs</option>
+            </select>
+          </div>
+        </div>
+        <div class="btn">
+          <button class="bttn">
+            <i class="fa-solid fa-filter"></i>
 
+            Filtre
+          </button>
+          <button>
+            <i class="fa-solid fa-arrows-rotate"></i>
+
+            Reinitialiser
+          </button>
+        </div>
+      </div>
+    </section>
 <section class="content">
 
+  {% if traiteur_list %}
+    {% for traiteur in traiteur_list %}
 
-<div class="parent">
-    
-    <div class="div1">
-        <img class="img" src="{% static 'images/traiteur.png' %}">
+    <div class="parent">
+      <div class="div1">
+        <img class="img" src="{% static 'images/traiteur.png' %}" />
+      </div>
 
-    </div>
-    <div class="mere">
+      <div class="mere">
         <div class="div4">
+          <h4>{{ traiteur.nomcomplet }}</h4>
+          <p>{{ traiteur.description }}</p>
 
-    {% if traiteur_list %}
-        {% for traiteur in traiteur_list %}
-            <h4>{{ traiteur.nomcomplet }}</h4>
-            <p>{{ traiteur.description }}</p>
-            <p><p>Specialité :
-                {% for s in traiteur.specialite.all %}
-                    {{ s.nomspecialite }}{% if not forloop.last %}, {% endif %}
-                {% empty %}
-                    Aucune
-                {% endfor %}
-            </p>
+          <p>
+            Specialité :
+            {% for s in traiteur.specialite.all %}
+              {{ s.nomspecialite }}{% if not forloop.last %}, {% endif %}
+            {% empty %}
+              Aucune
+            {% endfor %}
+          </p>
+
+          <div class="div6">
             <p>{{ traiteur.telephone }}</p>
 
-        {% endfor %}
-    {% else %}
-        <p>Aucun traiteur trouvé</p>
-    {% endif %}
+            <a href="{% url 'services:detail' traiteur.pk %}">
+              <button>Voir le profil</button>
+            </a>
+          </div>
         </div>
-    <div class="div5">
-        <p><span> <i class="fa-solid fa-star"></i>0.0</span></p>
-      
-        <button><a href="detail-traiteur.html">Voir le profil</a></button>
-    </div>
-</div>
 
-</div>
- <!---<div class="parent">
+        <div class="div5">
+          <p>
+            <span><i class="fa-solid fa-star"></i> 0.0</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+
+  {% else %}
+    <p>Aucun traiteur trouvé</p>
+  {% endif %}
+
+</section>
+      <!---<div class="parent">
       
     <div class="div1">
 <img class="img" src="image/téléchargement.jpeg" alt="">
@@ -144,61 +166,63 @@
     </div>
 </div>
 </div>-->
-     
-</section>
+    </section>
 
-<section class="border">
+    <section class="border">
+      <div class="contenair-img">
+        {% comment %} <img src="{% static 'images/banner-head-accueil.jpg' %}" /> {% endcomment %}
+      </div>
+      <div class="content-text">
+        <h1>vous etes traiteur ?</h1>
+        <p>
+          Decouvrez nos restaurants partenaires et faites vous livrer vos plats
+          preferer
+        </p>
+      </div>
+      <div class="button">
+        <a href="{% url "services:formulaire"%}"><h5>Devenir traiteur</h5></a>
+      </div>
+    </section>
 
-    <div class="contenair-img">
-        <img src="{% static 'images/banner-head-accueil.jpg' %}">
- 
-    </div>
-    <div class="content-text">
-     <h1 >vous etes traiteur ?</h1>
-     <p>Decouvrez nos restaurants partenaires et faites vous livrer vos plats preferer</p>
-    </div>
-    <div class="button">
-        <a href="inscription-traiteur.html"><h5>Devenir traiteur</h5></a>
-    </div>
-</section>
-
-<footer>
-        <div class="footer">
-            
-            <div class="services_footer">
-                <p>Services</p><br>
-                <ul>
-                    <li>Traiteurs</li>
-                    <li>Restaurants</li>
-                    <li>Cours de Cuisine</li>
-                </ul>
-            </div>
-            <div class="pro_space">
-                <p>Espace Pro</p><br>
-                <ul>
-                    <li>Devenez partenaire</li>
-                    <li>Connexion</li>
-                    <li>FAQ Professionels</li>
-                </ul>
-            </div>
-            <div class="contact">
-                <p>Contact</p><br>
-                <ul>
-                    <li>StarBuffet</li>
-                    <li>Dakar Senegal</li>
-                    <li>Tel: +221 77 000 00 00</li>
-                    <li>Email : contact@starbuff.com</li>
-                    <li><i class="fa-brands fa-facebook"></i> <i class="fa-brands fa-solid fa-instagram"></i></li>
-                </ul>
-            </div>
+    <footer>
+      <div class="footer">
+        <div class="services_footer">
+          <p>Services</p>
+          <br />
+          <ul>
+            <li>Traiteurs</li>
+            <li>Restaurants</li>
+            <li>Cours de Cuisine</li>
+          </ul>
         </div>
-
-        <div class="copyright">
-            <p>&copy; 2025. Tous droits réservés.</p>
+        <div class="pro_space">
+          <p>Espace Pro</p>
+          <br />
+          <ul>
+            <li>Devenez partenaire</li>
+            <li>Connexion</li>
+            <li>FAQ Professionels</li>
+          </ul>
         </div>
+        <div class="contact">
+          <p>Contact</p>
+          <br />
+          <ul>
+            <li>StarBuffet</li>
+            <li>Dakar Senegal</li>
+            <li>Tel: +221 77 000 00 00</li>
+            <li>Email : contact@starbuff.com</li>
+            <li>
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-solid fa-instagram"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>&copy; 2025. Tous droits réservés.</p>
+      </div>
     </footer>
-
-
-
-</body>
+  </body>
 </html>

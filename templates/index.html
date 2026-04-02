@@ -1,0 +1,253 @@
+{% load static %}
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="{% static 'images/logo.png' %}" />
+      </div>
+      <nav>
+        <div class="navig">
+          <ul>
+            <li><a href="#" class="active">Accueil</a></li>
+            <li><a href="#">Restaurants</a></li>
+            <li><a href="#">Cours de cuisine</a></li>
+            <li><a href="{% url "services:traiteur"%}">Traiteurs</a></li>
+            <li><a href="responsive-contact.html">Contacts</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="connecter">
+        <a href="{% url "login" %}"><h4 class="btn1">Connexion</h4></a>
+        <h4 class="btn2">Inscription</h4>
+      </div>
+
+      <div class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+
+<!-- 🏠 SECTION ACCUEIL -->
+<section class="accueil">
+    
+    <div class="accueil-text">
+        
+
+        <h1>Découvrez la <span>cuisine sénégalaise</span></h1>
+        <p>
+            Explorez les saveurs authentiques du Sénégal, du thiéboudienne aux alloco.
+            Apprenez les secrets avec nos chefs experts.
+        </p>
+        <a href="#" class="btn-cta">Découvrir</a>
+    </div>
+
+    <div class="accueil-img">
+        <img src="{% static 'images/thieboudieunerouge.webp' %}" alt="plat sénégalais">
+    </div>
+
+</section>
+
+<!-- 📊 STATS -->
+<section class="stats">
+    <div class="content-card">
+
+        <div class="mention">
+            <h2>100+</h2>
+            <p>Restaurants partenaires</p>
+        </div>
+
+        <div class="mention">
+            <h2>30 min</h2>
+            <p>Livraison moyenne</p>
+        </div>
+
+        <div class="mention">
+            <h2>50+</h2>
+            <p>Cours de cuisine</p>
+        </div>
+
+        <div class="mention">
+            <h2>4.8/5</h2>
+            <p>Note moyenne</p>
+        </div>
+
+    </div>
+</section>
+
+
+    <section>
+        <div class="service">
+            <h1>Nos services</h1>
+            <p>Decouvrez nos services de qualite pour tous vos besoin culinaires</p>
+        </div>
+
+        <div class="box">
+            <div class="text-box">
+
+                <h3>Trouver un restaurants</h3>
+                <p>Commandez vos plat preferer et faite-vous livrer rapidemment a domicile </p>
+                <h4>Trouver maintenant <i class="fa-solid fa-arrow-right"></i></h4>
+
+            </div>
+
+            <div class="text-box1">
+                <h3>Trouver un restaurants</h3>
+                <p>Commandez vos plat preferer et faite-vous livrer rapidemment a domicile </p>
+                <h4>Trouver maintenant <i class="fa-solid fa-arrow-right"></i></h4>
+
+            </div>
+
+            <div class="text-box2">
+                <h3>Trouver un restaurants</h3>
+                <p>Commandez vos plat preferer et faite-vous livrer rapidemment a domicile </p>
+                <h4>Trouver maintenant <i class="fa-solid fa-arrow-right"></i></h4>
+
+            </div>
+
+        </div>
+    </section>
+
+        <section>
+        <div class="localite">
+            <h2>Trouver les restaurants plus proche de vous</h2>
+    
+           <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123488.80138689418!2d-17.548398678618394!3d14.711175878311872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec172f5b3c5bb71%3A0xb17c17d92d5db21f!2sDakar!5e0!3m2!1sfr!2ssn!4v1766226048125!5m2!1sfr!2ssn" 
+  height="300"
+  style="border:0; width:100%;"
+  loading="lazy">
+</iframe>
+        </div>
+    </section>
+
+
+    <section class="clien">
+        <h2 class="title">Ce que disent nos clients a propos des restaurants</h2>
+        <div class="card">
+
+            <div class="clients">
+                <div class="icone">
+                    <span>FD</span>
+                </div>
+                <p class="para">Fatou Diop</p>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing </p>
+            </div>
+
+            <div class="clients1">
+                <div class="icone">
+                    <span>MD</span>
+                </div>
+                <p class="para">Mamadou Diallo</p>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing </p>
+            </div>
+
+            <div class="clients2">
+                <div class="icone">
+                    <span>AB</span>
+                </div>
+                <p class="para">Aissatou Ba</p>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing </p>
+            </div>
+
+            <div class="clients3">
+                <div class="icone">
+                    <span>OS</span>
+                </div>
+                <p class="para">Ousmane Sall</p>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing c</p>
+            </div>
+        </div>
+    </section>
+
+        <section class="border">
+
+        <div class="contenair-img">
+
+        </div>
+        <div class="content-text">
+            <h1>Pret a commencer? <br> commandez des maintanant</h1>
+            <p>Decouvrez nos restaurants partenaires et faites vous livrer vos plats preferer</p>
+        </div>
+    <div class="button">
+        <a href="#" class="btn-main">Trouver un restaurant !</a>
+    </div>
+    </section>
+
+  <footer>
+      <div class="footer">
+        <div class="services_footer">
+          <p>Services</p>
+          <br />
+          <ul>
+            <li>Traiteurs</li>
+            <li>Restaurants</li>
+            <li>Cours de Cuisine</li>
+          </ul>
+        </div>
+        <div class="pro_space">
+          <p>Espace Pro</p>
+          <br />
+          <ul>
+            <li>Devenez partenaire</li>
+            <li>Connexion</li>
+            <li>FAQ Professionels</li>
+          </ul>
+        </div>
+        <div class="contact">
+          <p>Contact</p>
+          <br />
+          <ul>
+            <li>StarBuffet</li>
+            <li>Dakar Senegal</li>
+            <li>Tel: +221 77 000 00 00</li>
+            <li>Email : contact@starbuff.com</li>
+            <li>
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-solid fa-instagram"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>&copy; 2025. Tous droits réservés.</p>
+      </div>
+    </footer>
+  </body>
+</html>
