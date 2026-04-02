@@ -2,6 +2,8 @@
 
 Application web Django pour présenter des traiteurs, leurs spécialités et permettre l’inscription de nouveaux profils.
 
+**Stack :** projet développé avec la **dernière version stable de [Django](https://www.djangoproject.com/)** (installer via `pip` pour rester à jour).
+
 ## Fonctionnalités
 
 - Page d’accueil et liste des traiteurs
@@ -12,9 +14,9 @@ Application web Django pour présenter des traiteurs, leurs spécialités et per
 
 ## Prérequis
 
-- Python 3.10 ou supérieur (recommandé)
-- [Django 4.2](https://docs.djangoproject.com/en/4.2/) (le projet a été généré avec Django 4.2.x)
-- **Pillow** (nécessaire pour le champ `ImageField` sur les traiteurs)
+- Python 3.10 ou supérieur (recommandé ; vérifier la [compatibilité Python / Django](https://docs.djangoproject.com/en/stable/faq/install/#what-python-version-can-i-use-with-django) pour la version installée)
+- **Django** — dernière version stable ([documentation](https://docs.djangoproject.com/en/stable/))
+- **Pillow** — nécessaire pour le champ `ImageField` sur les traiteurs
 
 ## Installation
 
@@ -35,10 +37,10 @@ Sous Linux ou macOS :
 source venv/bin/activate
 ```
 
-Installer les dépendances :
+Installer les dépendances (Django et Pillow à jour) :
 
 ```bash
-pip install "Django>=4.2,<5" Pillow
+pip install -U django Pillow
 ```
 
 ## Configuration et lancement
