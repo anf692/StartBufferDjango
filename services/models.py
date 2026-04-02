@@ -18,7 +18,7 @@ class Traiteurs(models.Model):
     email = models.EmailField()
     datedecreation = models.DateTimeField(auto_now_add=True)
     telephone = models.CharField(max_length=20)
-    image = models.URLField( blank=True, null=True)
+    image = models.ImageField(upload_to='traiteurs/', blank=True, null=True)
     
     def __str__(self):
         return self.nomcomplet

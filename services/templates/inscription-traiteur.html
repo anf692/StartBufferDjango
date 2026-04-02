@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'responsive/inscription-traiteur.css' %}">
+    <link rel="stylesheet" href="{% static 'css/inscription-traiteur.css' %}">
+
+<main>
+    <section class="banner">
+        <div class="banner-bg"></div>
+        <h1>Devenir Traiteur</h1>
+        <p>Enregistrez votre profil et vos services directement sur notre plateforme</p>
+    </section>
+
+    <section class="formulaire">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="infos-base">
+                <h3>Information de base</h3>
+                <div class="infos-base-input-1">
+                    <div class="infos-base1">
+                        <label for="id_nomcomplet">Nom complet</label><br>
+                        {{ form.nomcomplet }}
+                    </div>
+                    <div class="infos-base1">
+                        <label for="id_email">Email</label><br>
+                        {{ form.email }}
+                    </div>
+                </div>
+
+                <div class="infos-base-input-1">
+                    <div class="infos-base1">
+                        <label for="id_telephone">Téléphone</label><br>
+                        {{ form.telephone }}
+                    </div>
+                    <div class="infos-base1">
+                        <label for="id_adresse">Adresse</label><br>
+                        {{ form.adresse }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="infos-perso">
+                <div class="infos-perso2">
+                    <h3>Spécialités</h3>
+                    <div class="section">
+                        {% for checkbox in form.specialite %}
+                            <div class="checkbox-item">
+                                {{ checkbox.tag }} {{ checkbox.choice_label }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="infos-perso1">
+                    <label for="id_description">Description</label><br>
+                    {{ form.description }}
+                </div>
+            </div>
+
+            <div class="photo">
+                <h3>Photo de profil</h3>
+                <div class="images">
+                    {{ form.image }}
+                    <p>Formats acceptés: JPG, JPEG, PNG | Taille maximale: 10MB</p>
+                </div>
+            </div>
+
+            <div class="btn-login">
+                <button type="submit">S'inscrire</button>
+            </div>
+        </form>
+    </section>
+</main>
+
+{% endblock %}

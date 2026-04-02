@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --primary-color: #E65100;
+    --secondary-color: #FFB300;
+    --tertiary-color: #FFF3E0;
+}
+
+/* styles pour le header */
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 8%;
+    background-color: white;
+    width: 100%;
+}
+
+.logo img{
+    width: 120px;
+    object-fit: contain;
+    transition: 0.5s;
+}
+
+.logo img:hover{
+    transform: scale(1.2);
+}
+
+.navbar ul{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    position: relative;
+}
+
+.navbar ul li a::after{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    height: 4px;
+    width: 100%;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: 0.3s;
+    border-radius: 50px;
+    transform: scaleX(0);
+}
+
+.navbar ul li a:hover{
+    color: var(--primary-color);
+}
+
+.navbar ul li a:hover::after{
+    transform: scaleX(1);
+}
+
+
+
+
+.btn{
+    display: flex;
+    gap: 15px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.btn-connexion{
+    font-size: 18px;
+    padding: 10px 15px;
+    background-color: transparent;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+    transition: 0.5s;
+    
+}
+
+.btn-connexion a{
+    text-decoration: none;
+    color: #000;
+}
+
+.btn-connexion:hover{
+    transform: rotate(-5deg);
+    background-color: white;
+    border: 2px solid var(--primary-color);
+    font-weight: bold;
+}
+
+.btn-connexion a:hover{
+     color: var(--primary-color);
+}
+
+.btn-inscription{
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn-inscription a{
+    text-decoration: none;
+    color: white;
+}
+
+.btn-inscription a:hover{
+     color: var(--primary-color);
+}
+
+
+
+.btn-inscription:hover{
+    transform: rotate(5deg);
+    background-color: white;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+
+/* style pour la section footer */
+footer{
+    background-color:#111828;
+    color: #f2f2f2f2;
+    font-size: 14px;
+}
+
+footer p{
+
+    padding: 30px;
+    text-align: center;
+}
+
+.list{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0px;
+}
+
+.list-items{
+    padding: 20px 90px;
+}
+
+.list-items h3{
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.list-items ul{
+    list-style: none;
+}
+
+.list-items ul li a{
+    padding: 5px;
+    font-size: 11px;
+    text-decoration: none;
+    color: #f2f2f2f2;
+}
+
+.list-items ul li a:hover{
+    color: var(--primary-color);
+}
+
+.icone{
+    display: flex;
+}
+
+.fa-brands{
+    color: white;
+}
+
+.footer hr{
+   margin-left: 90px;
+   margin-right: 90px;
+   opacity: 0.3;
+}
+

@@ -1,0 +1,237 @@
+body {
+    background-color: #FEF3C6;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.banner {
+    width: 100%;
+    height: 300px;
+    background-image: url(../img/banner-caterers.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 200px;
+    margin: 0;
+}
+
+.banner-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background-color: #963f10e1;
+    z-index: 1;
+}
+
+.banner h1, .banner p {
+    position: relative;
+    color: white;
+    z-index: 2;
+}
+
+.banner h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.banner p {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* ------------------- FORMULAIRE ------------------- */
+.formulaire {
+    position: relative;
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* TITRES DE SECTIONS */
+.formulaire h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #E65100;;
+}
+
+/* ------------------- INPUTS ------------------- */
+.infos-base1 input,
+.infos-perso1 input,
+.infos-perso1 select,
+.infos-perso1 textarea,
+.infos-contact input,
+.images input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.infos-base1 input:focus,
+.infos-perso1 input:focus,
+.infos-perso1 select:focus,
+.infos-perso1 textarea:focus,
+.infos-contact input:focus {
+    border-color: #E65100;
+    box-shadow: 0 0 10px rgba(230, 81, 0, 0.2);
+    outline: none;
+}
+
+/* ------------------- FLEX BOX ------------------- */
+.infos-base-input-1,
+.infos-input-contact,
+.infos-perso2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Colonne responsive */
+.infos-base1,
+.infos-contact,
+.infos-perso1 {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* ------------------- TEXTAREA ------------------- */
+.infos-perso1 textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* ------------------- CHECKBOX ------------------- */
+.infos-perso2 {
+    display: flex;
+    flex-direction: column; /* colonne verticale */
+    gap: 10px;
+}
+
+.infos-perso2 .section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+}
+
+.checkbox-item input[type="checkbox"] {
+    accent-color: #E65100;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* ------------------- PHOTO ------------------- */
+.photo {
+    margin-top: 30px;
+}
+
+.images .choix {
+    padding: 5px 15px;
+    background-color: #e651002f;
+    border-radius: 5px;
+    color: #E65100;
+    font-weight: 500;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.images .choix:hover {
+    background-color: #E65100;
+    color: #fff;
+}
+
+.images p {
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+/* ------------------- BOUTON ------------------- */
+.btn-login button {
+    background-color: #E65100;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-login button:hover {
+    background-color: #fff;
+    color: #E65100;
+    border: 2px solid #E65100;
+    transform: scale(1.05);
+}
+
+.infos-base, .infos-perso, .infos-contact, .photo {
+    background-color: #fff;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+}
+
+/* ------------------- RESPONSIVE ------------------- */
+@media (max-width: 1024px) {
+    .banner {
+        padding-left: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner {
+        height: 250px;
+        padding-left: 30px;
+    }
+
+    .formulaire {
+        margin: 30px 20px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .banner p {
+        font-size: 0.9rem;
+    }
+
+    .infos-base-input-1,
+    .infos-input-contact,
+    .infos-perso2 {
+        flex-direction: column;
+    }
+}

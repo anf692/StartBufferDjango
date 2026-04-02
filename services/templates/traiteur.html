@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/traiteur.css' %}">
+<link rel="stylesheet" href="{% static 'responsive/traiteur.css' %}">
+
+<main>
+    <!-- section banniere -->
+    <section class="banner">
+
+        <div class="banner-bg"></div>
+        <h1>Nos Traiteurs</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque nostrum, laborum nulla cum perferendis ab sint inventore.</p>
+
+    </section>
+
+    <!-- section pour les traiteurs -->
+    <section class="list-traiteur">
+
+        <div class="filtres">
+            <h4>Filtres</h4>
+
+            <form method="GET" class="form">
+                <div class="form-item">
+                    <label for="choix1">Spécialité</label><br>
+                    <select name="specialite" id="choix1">
+                        <option value="">Toutes les spécialités</option>
+                        {% for s in specialites %}
+                            <option value="{{ s.id }}"
+                                {% if request.GET.specialite == s.id|stringformat:"s" %}selected{% endif %}>
+                                {{ s.nomspecialite }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-item">
+                    <label for="choix2">Statut</label><br>
+                    <select name="statut" id="choix2">
+                        <option value="">Tous</option>
+
+                        <option value="actif"
+                            {% if request.GET.statut == "actif" %}selected{% endif %}>
+                            Actif
+                        </option>
+
+                        <option value="inactif"
+                            {% if request.GET.statut == "inactif" %}selected{% endif %}>
+                            Inactif
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-btn"><br>
+                    <button type="submit" class="btn-filter">
+                        <i class="fa-solid fa-filter"></i> Filtrer
+                    </button>
+
+                    <a href="{% url 'liste_traiteurs' %}" class="btn-reinitialisation">
+                        <i class="fa-solid fa-rotate"></i> Réinitialiser
+                    </a>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="traiteurs">
+
+            {% for traiteur in traiteurs %}
+            <div class="traiteurs-item">
+                
+                <div class="images">
+                    <p><i class="fa-solid fa-check"></i> Vérifier</p>
+
+                    {% if traiteur.image %}
+                        <img src="{{ traiteur.image.url }}" alt="{{ traiteur.nomcomplet }}">
+                    {% else %}
+                        <img src="{% static 'img/thieboudieunerouge.webp' %}" alt="Image par défaut">
+                    {% endif %}
+                </div>
+
+                <div class="traiteurs-infos">
+
+                    <div class="info1">
+                        <p><i class="fa-solid fa-circle"></i> {{ traiteur.nomcomplet }}</p>
+                        {% if traiteur.est_actif %}
+                            <p style="color: green"><i class="fa-solid fa-star"></i> Actif</p>
+                        {% else %}
+                            <p style="color: orangered"><i class="fa-solid fa-star"></i> Inactif</p>
+                        {% endif %}
+
+                    </div>
+
+                    <p>{{ traiteur.description }}</p>
+
+                    <div class="info2">
+                        <p>Spécialité :</p>
+                        <ul>
+                            {% for s in traiteur.specialite.all %}
+                                <li>{{ s.nomspecialite  }}</li>
+                            {% empty %}
+                                <li>Aucune spécialité</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="infos3">
+                        <p><i class="fa-solid fa-phone"></i> {{ traiteur.telephone }}</p>
+
+                        <a href="{% url 'detailtraiteur' traiteur.id %}" class="btn">
+                            voir le profil
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+            {% empty %}
+                <p>Aucun traiteur disponible.</p>
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+    <!-- section call to action -->
+    <section class="action">
+        <div class="action-overlay"></div>
+        <div class="action-item">
+            <h2>Vous etes traiteur?</h2>
+            <p>Lorem ipsum dolor sit amet consectetur !</p>
+            <a href="{% url "ajouter_traiteur" %}">Devenir traiteur</a>
+        </div>
+    </section>
+
+</main>
+{% endblock %}
+
+

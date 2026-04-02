@@ -1,0 +1,63 @@
+@media screen and (min-width: 1024px) {
+
+    /* style pour la section contact */
+
+    .contact{
+        margin-left: 20%;
+        margin-right: 20%;
+        height: auto;
+    }
+
+    .contact h1{
+        font-size: 36px;
+    }
+
+    .contact p{
+        font-size: 18px;
+    }
+
+    .infos-name{
+        display: grid;
+        grid-template-columns: 50% 47%;
+        gap: 15px;
+    }
+
+    .form-item input{
+        padding: 10px;
+    }
+
+
+    /* syle pour les card infos */
+
+    .card-infos{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 100px;
+    }
+
+    .infos-item{
+        width: 30%;
+    }
+
+    .form-item label{
+        font-size: 17px;
+    }
+
+    .form-btn a{
+        font-size: 17px;
+    }
+
+    .form-btn .fa-solid{
+        font-size: 20px;
+    }
+
+    .infos-item .fa-solid{
+        font-size: 20px;
+        width: 25%;
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+
+   
+}

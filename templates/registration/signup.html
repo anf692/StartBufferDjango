@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/connexion.css' %}">
+<link rel="stylesheet" href="{% static 'responsive/connexion.css' %}">
+
+<main>
+
+    <div class="connexion">
+        <h1>Inscription</h1>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <p class="error">{{ form.non_field_errors }}</p>
+
+            <div class="form-item">
+                <label>Nom d'utilisateur</label>
+                {{ form.username }}
+            </div>
+
+            <div class="form-item">
+                <label>Mot de passe</label>
+                {{ form.password1 }}
+            </div>
+
+            <div class="form-item">
+                <label>Confirmer le mot de passe</label>
+                {{ form.password2 }}
+            </div>
+
+            <div class="btn-form">
+                <button type="submit">S'inscrire</button>
+            </div>
+        </form>
+
+    </div>
+
+</main>
+{% endblock %}

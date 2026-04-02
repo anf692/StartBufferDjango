@@ -1,0 +1,83 @@
+@media (max-width: 768px) {
+
+    .productID{
+        padding: 20px;
+        height: auto;
+    }
+
+    /* section banniere mobile */
+    .content{
+        position: relative;
+        left: 0;
+        width: 100%;
+        height: auto;
+        margin-bottom: 40px;
+    }
+
+  
+    .content img{
+        height: 220px;
+    }
+
+    .overlay{
+        position: absolute;
+        top: 0;
+        height: 220px;
+    }
+    
+
+    .content ul{
+        position: absolute;
+        left: 2%;
+        top: 165px;
+        justify-content: center;
+        padding: 10px;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    /* section infos mobile */
+    .infos{
+        grid-template-columns: 1fr;
+        margin: 0;
+        gap: 20px;
+    }
+
+    .infos-left,
+    .infos-right{
+        width: 100%;
+    }
+
+    .infos-left{
+        grid-template-rows: auto;
+    }
+
+    .infos-left1,
+    .infos-left2,
+    .infos-left3,
+    .infos-right1,
+    .infos-right2,
+    .infos-right3,
+    .infos-right-btn{
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .infos-left3 .content{
+        grid-template-columns: 100px;
+    }
+
+    .infos-left3 span{
+        left: 0;
+        text-align: left;
+        grid-template-columns: auto auto;
+        font-size: 12px;
+    }
+
+    .infos-right-btn button{
+        width: 100%;
+        padding: 10px;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/detail.css' %}">
+<link rel="stylesheet" href="{% static 'responsive/detail.css' %}">
+
+<main>
+
+    <section class="productID">
+        
+        <div class="content">
+            <div class="overlay"></div>
+
+            <ul>
+                <li><i class="fa-solid fa-star"></i> 0.0</li>
+                <li><i class="fa-solid fa-check"></i> Vérifié</li>
+            </ul>
+
+            {% if traiteur.image %}
+                <img src="{{ traiteur.image.url }}" alt="">
+            {% else %}
+                <img src="{% static './img/thieboudieunerouge.webp' %}" alt="">
+            {% endif %}
+        </div>
+
+        <div class="infos">
+
+            <!-- LEFT -->
+            <div class="infos-left">
+
+                <div class="infos-left1">
+                    <h4>A propos</h4>
+                    <p>{{ traiteur.description }}</p>
+                </div>
+
+                <div class="infos-left2">
+                    <h4>Spécialité</h4>
+                    <ul>
+                        {% for s in traiteur.specialite.all %}
+                            <li>{{ s.nomspecialite }}</li>
+                        {% empty %}
+                            <li>Aucune spécialité</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <!-- Statique pour le moment -->
+                <div class="infos-left3">
+                    <h4>Services proposés</h4>
+                    <div class="content">
+                        <div class="service-item">
+                            <span><i class="fa-solid fa-check"></i>Mariage</span>
+                            <span><i class="fa-solid fa-check"></i>Cocktails</span>
+                        </div>
+                        <div class="service-item">
+                            <span><i class="fa-solid fa-check"></i>Anniversaire</span>
+                            <span><i class="fa-solid fa-check"></i>Cuisine</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+            <div class="infos-right">
+
+                <div class="infos-right1">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-location-dot"></i> {{ traiteur.adresse }}</li>
+                        <li><i class="fa-solid fa-phone"></i> {{ traiteur.telephone }}</li>
+                        <li><i class="fa-solid fa-comment"></i> {{ traiteur.email }}</li>
+                    </ul>
+                </div>
+
+                <div class="infos-right2">
+                    <h4>Experience</h4>
+                    <p><i class="fa-solid fa-calendar"></i> Depuis {{ traiteur.datedecreation|date:"Y" }}</p>
+                </div>
+
+                <!-- Statique pour le moment -->
+                <div class="infos-right3">
+                    <h4>Langues parlées</h4>
+                    <ul>
+                        <li>Français</li>
+                        <li>Anglais</li>
+                    </ul>
+                </div>
+
+                <div class="infos-right-btn">
+                    <button>
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:{{ traiteur.telephone }}">Contacter</a>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+{% endblock %}
+

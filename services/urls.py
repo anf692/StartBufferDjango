@@ -1,19 +1,12 @@
 from django.urls import path
-from . import views
-from django.conf import settings
-from django.conf.urls.static import static
-from django.contrib.auth import views as auth_views
+from .views import accueil, liste_traiteurs, detail_traiteur, SignupView, ajouter_traiteur, contact
 
-app_name = "services"
 
 urlpatterns = [
-    path("", views.acceuil, name="accueil"),
-    path("traiteur/", views.list_traiteur, name="traiteur"),
-    path("forms/", views.formulaire, name="formulaire"),
-    path('comptes/logout/', auth_views.LogoutView.as_view(next_page='/index/traiteur/'), name='logout'),
-    path("detail/<int:pk>/", views.detail_traiteur, name="detail"),
+    path('', accueil, name='accueil'),
+    path('liste/', liste_traiteurs, name='liste_traiteurs'),
+    path('traiteurs/<int:id>/', detail_traiteur, name='detailtraiteur'),
+    path('signup/', SignupView.as_view(), name='signup'),
+    path('ajouter/', ajouter_traiteur, name='ajouter_traiteur'),
+    path('contact/', contact, name='contact'),
 ]
-
-# Ajouter ceci pour le développement
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,16 @@
+@media (max-width: 768px) {
+    
+    .banner{
+        height: 220px;
+    }
+
+    /* .banner h1 {
+    } */
+
+    .banner p {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-right: 0;
+        font-size: 14px;
+    }
+}

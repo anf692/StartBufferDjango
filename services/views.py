@@ -1,50 +1,73 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Traiteurs
-from django.shortcuts import render
-from .models import Traiteurs
-from .forms import traiteurform
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Traiteurs, Specialites
+from .forms import TraiteurForm
+
+# Authentification
+from django.views.generic import CreateView
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
+
+#loginrequired
 from django.contrib.auth.decorators import login_required
 
+
+def accueil(request):
+    return render(request, 'index.html')
+
+
 # Cette ligne empêche l'accès si l'utilisateur n'est pas connecté
-@login_required(login_url='/comptes/login/')
-def list_traiteur(request):
-    traiteur = Traiteurs.objects.all()
-    context = {
-        "traiteur_list": traiteur
-    }
-    return render(request, "liste.html", context)
+@login_required
+def liste_traiteurs(request):
+    traiteurs = Traiteurs.objects.all()
+    specialites = Specialites.objects.all()
+
+    # récupérer les valeurs
+    specialite = request.GET.get('specialite')
+    statut = request.GET.get('statut')
+
+    # filtrer spécialité
+    if specialite:
+        traiteurs = traiteurs.filter(specialite__id=specialite)
+
+    # filtrer statut
+    if statut == "actif":
+        traiteurs = traiteurs.filter(est_actif=True)
+    elif statut == "inactif":
+        traiteurs = traiteurs.filter(est_actif=False)
+
+    return render(request, 'traiteur.html', {
+        'traiteurs': traiteurs,
+        'specialites': specialites
+    })
+
+
+def detail_traiteur(request, id):
+    traiteur = get_object_or_404(Traiteurs, id=id)
+    return render(request, "detail.html", {"traiteur": traiteur})
 
 
 
-def detail_traiteur(request, pk):
-    traiteur = get_object_or_404(Traiteurs, pk=pk)
-    return render(request, "detail-traiteur.html", {"traiteur": traiteur})
+class SignupView(CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy('login')
+    template_name = "registration/signup.html"
 
 
-def acceuil(request):
-    return render(request, "index.html")
-
-def formulaire(request):
-    return render(request, "forms.html")
-
-def traiteur_page_view(request):
-    succes_msg = None
-    if request.method == "POST":
-        form = traiteurform(request.POST)
+@login_required
+def ajouter_traiteur(request):
+    if request.method == 'POST':
+        form = TraiteurForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            succes_msg = "Votre message a bien ete envoyer avec succes"
-            form = traiteurform()
+            form = TraiteurForm()
+            return redirect('liste_traiteurs')
+            
     else:
-        form = traiteurform()
-    context = {
-        "form" : form,
-        "succes_msg" : succes_msg
-    }
-    return render(request, "forms.html", context)
-# from django.contrib.auth.decorators import login_required
+        form = TraiteurForm()
 
-# @login_required # Applique le décorateur juste avant la définition
-# def ma_vue_protegee(request):
-#    # ...
-#    return render(request, 'login.html')
+    return render(request, 'inscription-traiteur.html', {'form': form})
+
+
+def contact(request):
+    return render(request, 'contact.html')
+

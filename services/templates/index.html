@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'responsive/base.css' %}">
+
+
+    <main>
+        
+        <!-- section pour le banniere -->
+        <section id="home" class="banner">
+            
+            <div class="overlay"></div>
+            <div class="banner-left">
+                <h1>Decouvrez la <span> cuisine <br> Senegalaise</span></h1>
+                <p>ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quisquam, quod. Lorem ipsum dolor sit amet consectetur 
+                    adipisicing elit. Quisquam, quod.
+                </p>
+            </div>
+
+            <div class="banner-right">
+                <img src="{% static 'img/thieboudieunerouge.webp'%}" alt="">
+            </div>
+
+        </section>
+
+
+        <!-- section pour les scores -->
+        <section id="score" class="score">
+
+            <div class="score-item">
+                <h2>100+</h2>
+                <p>Restaurants Partenaires</p>
+            </div>
+
+            <div class="score-item">
+                <h2>30min</h2>
+                <p>Livraison Moyenne</p>
+            </div>
+
+            <div class="score-item">
+                <h2>50+</h2>
+                <p>Cours de cuisine</p>
+            </div>
+
+            <div class="score-item">
+                <h2>4.8/5</h2>
+                <p>Note Moyenne</p>
+            </div>
+
+        </section>
+
+        <!-- section pour les services -->
+        <section class="service">
+
+            <h2>Nos Services</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, nostrum?</p>
+
+            <div class="service-item">
+                <div class="service-item1">
+                    <h3>Trouver un restaurants</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                    <a href="#" class="service-lien">Trouver Maintenant</a>
+                </div>
+
+                <div class="service-item2">
+                    <h3>Cours de cuisine</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                    <a href="#" class="service-lien">Decouvrir les Cours</a>
+                </div>
+
+                <div class="service-item1">
+                    <h3>Services de traiteurs</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                    <a href="{% url "liste_traiteurs" %}" class="service-lien">Voir les Traiteurs</a>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- section pour la carte map -->
+        <section class="map">
+            <h2>Trouver les restaurants pour les proches de vous?</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15434.680668921084!2d-17.278461749999998!3d14.731230499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2ssn!4v1766260260325!5m2!1sfr!2ssn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+
+
+        <!-- section pour les temoignages -->
+        <section class="temoignage">
+            <h1 class="titre">Ce que disent nos clients a propos des restaurants</h1>
+
+            <div class="box-temoignage">
+                <div class="temoignage-item">
+                    <div class="client-info">
+
+                        <div class="name name-fd">
+                            <p>FD</p>
+                        </div>
+
+                        <div class="client-text">
+                            <h3>Fatou Diop</h3>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                </div>
+
+                <div class="temoignage-item">
+                    <div class="client-info">
+                    
+                        <div class="name name-md">
+                            <p>MD</p>
+                        </div>
+
+                        <div class="client-text">
+                            <h3>Mamadou Diallo</h3>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                </div>
+
+                <div class="temoignage-item">
+                    <div class="client-info">
+                        
+                        <div class="name name-ab">
+                            <p>AB</p>
+                        </div>
+
+                        <div class="client-text">
+                            <h3>Aissata Ba</h3>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star fa-star-5"></i>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                </div>
+
+                <div class="temoignage-item">
+                    <div class="client-info">
+                        
+                        <div class="name name-os">
+                            <p>OS</p>
+                        </div>
+
+                        <div class="client-text">
+                            <h3>Ousmane Sall</h3>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- section call to action -->
+        <section class="action">
+            <div class="action-overlay"></div>
+            <div class="action-item">
+                <h2>Pret a commencez ? <br> commandez des maintenants.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, cumque!</p>
+                <a href="#">Trouvez un restaurants!</a>
+            </div>
+        </section>
+
+    </main>
+
+
+{% endblock  %} 
+

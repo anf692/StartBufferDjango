@@ -1,77 +1,117 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Starbuffet</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Buffer</title>
+    <link rel="stylesheet" href="{% static "css/base.css" %}">
+    <link rel="stylesheet" href="{% static "responsive/base.css" %}">
+    <script src="https://kit.fontawesome.com/ffece73c02.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
-
-<header class="header">
-    <div class="navbar">
-
+    
+    <header>
         <div class="logo">
-            <img src="{% static 'images/logo.png' %}" alt="logo">
+            <img src="{% static "./img/logo.png" %}" alt="logo start buffer">
         </div>
 
-        <ul class="menu">
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">Restaurants</a></li>
-            <li><a href="#">Cours de cuisine</a></li>
-            <li><a href="#">Traiteurs</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
+        <!-- Bouton burger pour mobile -->
+            <input type="checkbox" id="burger-toggle" class="burger-checkbox">
+            <label for="burger-toggle" class="burger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
 
-        <div class="connecter">
-            <a href="#" class="btn login">Connexion</a>
-            <a href="#" class="btn signup">Inscription</a>
-        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="{% url "accueil" %}">Acceuil</a></li>
+                <li><a href="#">Restaurants</a></li>
+                <li><a href="#">Cours de cuisine</a></li>
+                <li><a href="{% url "liste_traiteurs" %}">Traiteurs</a></li>
+                <li><a href="{% url "contact" %}">Contact</a></li>
+            </ul>
+        </nav>
 
-    </div>
-</header>
+        <div class="btn">
+            <div class="btn-connexion">
+                {% if user.is_authenticated %}
+                    <a href="{% url "logout" %}">Deconnexion</a>
+                {% else %}
+                    <a href="{% url "login" %}">Connexion</a>
+                {% endif %}
 
-<main>
-    {% block content %}
-    {% endblock %}
-</main>
-
- <footer class="footer-f">
-        <div class="footer">
-
-            <div class="services_footer">
-                <p>Services</p><br>
-                <ul>
-                    <li>Traiteurs</li>
-                    <li>Restaurants</li>
-                    <li>Cours de Cuisine</li>
-                </ul>
             </div>
-            <div class="pro_space">
-                <p>Espace Pro</p><br>
-                <ul>
-                    <li>Devenez partenaire</li>
-                    <li>Connexion</li>
-                    <li>FAQ Professionels</li>
-                </ul>
-            </div>
-            <div class="contact">
-                <p>Contact</p><br>
-                <ul>
-                    <li>StarBuffet</li>
-                    <li>Dakar Senegal</li>
-                    <li>Tel: +221 77 000 00 00</li>
-                    <li>Email : contact@starbuff.com</li>
-                    <li><i class="fa-brands fa-facebook"></i> <i class="fa-brands fa-solid fa-instagram"></i></li>
-                </ul>
-            </div>
+
+            {% if not user.is_authenticated %}
+                <div class="btn-inscription">
+                    <a  href="{% url "signup" %}">Inscription</a>
+                </div>
+            {% endif %}
         </div>
 
-        <div class="copyright">
-            <p>&copy;2025 StarBuffet. Tous droits réservés.</p>
-        </div>
+    </header>
+
+    {% block content %}{% endblock  %}
+
+
+    <footer>
+        <section class="footer">
+
+            <div class="list">
+                <div class="list-items">
+                    <h3>A propos</h3>
+                    <ul>
+                        <li><a href="">Qui sommes-nous</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="">Mentions legales</a></li>
+                        <li><a href="">Politique de confidentialite</a></li>
+                    </ul>
+                </div>
+
+                <div class="list-items">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="">Traiteur</a></li>
+                        <li><a href="">Restaurants</a></li>
+                        <li><a href="">Cours de cuisine</a></li>
+                    </ul>
+                </div>
+
+                <div class="list-items">
+                    <h3>Espace Pro</h3>
+                    <ul>
+                        <li><a href="">Devenir partenaire</a></li>
+                        <li><a href="">Connexion</a></li>
+                        <li><a href="">FAQ Professionnels</a></li>
+                    </ul>
+                </div>
+
+                <div class="list-items">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="">Star Buffet</a></li>
+                        <li><a href="">Dakar, Senegal</a></li>
+                        <li><a href="">Tel: +221 77 000 00 00</a></li>
+                        <li><a href="">Email: contact@gmail.com</a></li>
+                    </ul>
+                    <div class="icone">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+        </section>
+
+        <p>&copy;2025 Start Buffet. Tous droit reserves.</p>
+
     </footer>
+
 </body>
 </html>
+

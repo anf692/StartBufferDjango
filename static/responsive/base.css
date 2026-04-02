@@ -1,0 +1,133 @@
+.burger-checkbox {
+    display: none;
+}
+
+.burger-icon {
+    display: none;
+}
+
+/* Styles de base du bouton burger (sera activé uniquement en mobile) */
+.burger-icon {
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    z-index: 1000;
+    padding: 5px;
+}
+
+.burger-icon span {
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+/* Animation du burger quand il est ouvert */
+.burger-checkbox:checked ~ .burger-icon span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.burger-checkbox:checked ~ .burger-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-checkbox:checked ~ .burger-icon span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+
+
+@media screen and (max-width: 768px) {
+    
+    /* Header - Mobile */
+    header {
+        margin-bottom: 3%;
+    }
+
+    .navbar ul{
+        margin: 15px;
+        padding: 15px 20px;
+        border-radius: 15px;
+        position: relative;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .navbar ul li, .btn{
+        display: none;
+        width: 100%;
+        order: 3;
+    }
+
+    /* Afficher le bouton burger à droite */
+    .burger-checkbox {
+        display: none; /* Caché mais fonctionnel */
+    }
+
+    .burger-icon {
+        display: flex;
+        order: 2;
+    }
+
+    /* Section footer - Mobile */
+
+    .list{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-left: -60px;
+    }
+
+    .footer hr{
+        margin-left: 20px;
+        margin-right: 20px;
+        opacity: 0.3;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    
+    /* Header - Mobile */
+    header {
+        margin-bottom: 2px;
+    }
+
+    .logo img{
+        width: 90px;
+        height: 10%;
+        object-fit: contain;
+    }
+
+    /* Section footer - Mobile */
+
+    .list{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-left: -60px;
+    }
+
+    .list-items ul li a{
+        padding: 5px;
+        font-size: 9px;
+        text-decoration: none;
+        color: #f2f2f2f2;
+    }
+
+    footer p{
+        font-size: 10px;
+        padding: 30px;
+        text-align: center;
+    }
+    .footer hr{
+        margin-left: 20px;
+        margin-right: 20px;
+        opacity: 0.3;
+    }
+
+}

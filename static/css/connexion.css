@@ -1,0 +1,109 @@
+:root {
+    --primary-color: #E65100;
+}
+
+body {
+    background-color: #f3eded;
+    
+}
+
+main {
+    min-height: 80vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+/* CARD */
+.connexion {
+    background-color: white;
+    padding: 25px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+/* TITRE */
+.connexion h1 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+/* INPUT */
+.connexion .form-item input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #999;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+/* FOCUS INPUT */
+.connexion .form-item input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(230, 81, 0, 0.3);
+}
+
+/* OPTIONS (checkbox + lien) */
+.connexion .form-item2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.connexion .form-item2 a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+/* LIENS */
+.connexion a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    margin-top: 10px;
+}
+
+/* BOUTON  */
+.btn-form button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+/* HOVER */
+.btn-form button:hover {
+    background-color: #bf4a00;
+}
+
+/* CLICK */
+.btn-form button:active {
+    transform: scale(0.97);
+}
+
+/* ERREUR */
+.error {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+

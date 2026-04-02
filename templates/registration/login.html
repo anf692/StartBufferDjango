@@ -1,58 +1,58 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-          <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" >
-</head>
-<body>
-    
 
+{% block content %}
 
+<link rel="stylesheet" href="{% static 'css/connexion.css' %}">
+{% comment %} <link rel="stylesheet" href="{% static 'responsive/connexion.css' %}"> {% endcomment %}
 
-<section>
-    <div class="authentification">
-    <div class="Connexion">
-    <h3>Connexion</h3>
-</div>
-<form method="post" action="{% url "login" %}">
-    {% csrf_token %}
-<div class="labe">
-    <div class="labe">
+<main>
 
-        <label for="id_username">Nom complet</label>
-        {{ form.username }}
+    <div class="connexion">
+        <h1>Connexion</h1>
 
-        <label for="id_password">Mot de passe</label>
-        {{ form.password }}
+        <form method="post">
+            {% csrf_token %}
 
+            <!-- ERREURS GLOBALES -->
+            <p class="error">{{ form.non_field_errors }}</p>
+
+            <!-- USERNAME -->
+            <div class="form-item">
+                <label>Nom d'utilisateur</label>    
+                {{ form.username }}
+                {{ form.username.errors }}
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="form-item">
+                <label>Mot de passe</label>
+                {{ form.password }}
+                {{ form.password.errors }}
+            </div>
+
+            <!-- OPTIONS -->
+            <div class="form-item2">
+                <input type="checkbox" id="remember">
+                <label for="remember">Se souvenir de moi</label>
+
+              
+                <a href="#">Mot de passe oublié ?</a>
+            </div>
+
+            <!-- LIEN INSCRIPTION -->
+            <a href="{% url 'signup' %}">
+                Pas encore de compte ? Inscrivez-vous
+            </a>
+
+            <!-- BOUTON -->
+            <div class="btn-form">
+                <button type="submit">Se connecter</button>
+            </div>
+
+        </form>
     </div>
-   
-</div>
-<div class="chex">
-    <input type="checkbox">
-    <label for="souvenir">Se souvenir de moi</label>
-    <div class="oublier">
-    <p>Mot de passe oublier</p>
-  </div>
-</div>
-<div class="compte">
-    <p>Pas encore de compte? inscrivez-vous</p>
-</div>
-<div class="seconex">
-    <button type="submit">Se connecter</button>
-</div>
-</div>
-</form>
-</div>
-</section>
 
+</main>
 
-
-
-
-</body>
-</html>
+{% endblock %}
