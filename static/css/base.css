@@ -110,6 +110,19 @@ header{
      color: var(--primary-color);
 }
 
+.btn-connexion .deconnexion{
+    font-size: 18px;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    color: #000;
+}
+
+.btn-connexion .deconnexion:hover{
+    color: var(--primary-color);
+}
+
+/* style pour l'inscription */
 .btn-inscription{
     font-size: 18px;
     font-weight: 500;

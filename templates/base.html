@@ -33,7 +33,9 @@
                 <li><a href="{% url "liste_traiteurs" %}">Traiteurs</a></li>
                 <li><a href="{% url "contact" %}">Contact</a></li>
                 {% if user.is_authenticated %}
-                    <li><p>{{ user.username }}</p></li>
+                    <li>
+                        <p class="username">{{ user.username }}</p>
+                    </li>
                 {% endif %}
             </ul>
             
@@ -42,7 +44,10 @@
         <div class="btn">
             <div class="btn-connexion">
                 {% if user.is_authenticated %}
-                    <a href="{% url "logout" %}">Deconnexion</a>
+                    <form method="post" action="{% url "logout" %}">
+                        {% csrf_token %}
+                        <button type="submit" class="deconnexion">Deconnexion</button>
+                    </form>
                 {% else %}
                     <a href="{% url "login" %}">Connexion</a>
                 {% endif %}
