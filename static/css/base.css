@@ -68,6 +68,11 @@ header{
     transform: scaleX(1);
 }
 
+.navbar ul li p{
+    font-size: 18px;
+    font-weight: 500;
+    color: red;
+}
 
 
 

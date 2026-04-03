@@ -53,15 +53,18 @@ class SignupView(CreateView):
     template_name = "registration/signup.html"
 
 
+from django.contrib.auth.decorators import login_required
+
 @login_required
 def ajouter_traiteur(request):
     if request.method == 'POST':
         form = TraiteurForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            form = TraiteurForm()
+            traiteur = form.save(commit=False) 
+            traiteur.user = request.user    
+            traiteur.save()                  
+
             return redirect('liste_traiteurs')
-            
     else:
         form = TraiteurForm()
 

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Specialites(models.Model):
@@ -10,6 +11,7 @@ class Specialites(models.Model):
 
 
 class Traiteurs(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     nomcomplet = models.CharField(max_length=100)
     specialite = models.ManyToManyField(Specialites)
     description = models.TextField()

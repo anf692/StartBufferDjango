@@ -32,7 +32,11 @@
                 <li><a href="#">Cours de cuisine</a></li>
                 <li><a href="{% url "liste_traiteurs" %}">Traiteurs</a></li>
                 <li><a href="{% url "contact" %}">Contact</a></li>
+                {% if user.is_authenticated %}
+                    <li><p>{{ user.username }}</p></li>
+                {% endif %}
             </ul>
+            
         </nav>
 
         <div class="btn">
